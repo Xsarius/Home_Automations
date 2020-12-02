@@ -1,0 +1,32 @@
+sitemap wygledy label="Wyględy " {
+    
+    Frame label="Parter" icon="groundfloor" {
+        //Group item=BathroomDownstairs
+        //Group item=Corridor1 
+        //Group item=Corridor2 
+        //Group item=EntranceHall
+        //Group item=Garage 
+        //Group item=Kitchen
+        //Group item=Laundry
+        Group item=LivingRoom
+        Group item=Office 
+        
+    }
+
+    Frame label="Piętro Pierwsze" icon="firstfloor" {
+        //Group item=Attic 
+        //Group item=BathroomUpstairs
+        //Group item=Corridor
+        Group item=Bedroom1
+    }
+
+    Frame label="Podwórko i ogród"
+    {
+        Group item=Outside
+        Switch item=FrontyardMasterSwitch
+        
+    }
+    
+    //Frame label="Ogród"
+    
+}

@@ -1,0 +1,57 @@
+/*  Type     Name               Label                icon                 belonging group                atribues?      */
+
+     ////////////
+    // Groups //
+   ////////////
+    Group    Home                 "Wyględy"            <house>                                              ["Building"]
+
+    Group    GroundFloor          "Parter"             <groundfloor>        (Home)                          ["Floor"]
+
+    //Group    BathroomDownstairs "Łazienka"           <bath>               (GroundFloor)                 
+    //Group    Corridor1          "Korytarz-Garaż"     <corridor>           (GroundFloor)                
+    //Group    Corridor2          "Korytarz-Schody"    <corridor>           (GroundFloor)                  
+    //Group    EntranceHall       "Hol"                <frontdoor>          (GroundFloor)                 
+    //Group    Garage             "Garaż"              <garage>             (GroundFloor)                 
+    //Group    Kitchen              "Kuchnia"            <kitchen>            (GroundFloor)                  
+    Group     LivingRoom          "Salon"              <sofa>               (GroundFloor)                  
+    Group     Office              "Gabinet"            <office>             (GroundFloor)
+     Group     YeelightDeskLamp2   "Lampka"             <light>              (Office)
+    //Group    Laundry            "Pralnia"            <washingmachine>     (GroundFloor)                  
+    
+    Group    FirstFloor         "Piętro Pierwsze"    <firstfloor>         (Home)                             ["Floor"]
+
+    //Group    Attic              "Poddasze"           <attic>              (FirstFloor)
+    Group     Bedroom1           "Pokój Kuby"         <bedroom>            (FirstFloor)
+     Group     YeelightDeskLamp1  "Lampka przy łóżku"  <light>              (Bedroom1)   
+    //Group    BathroomUpstairs   "Łazienka"           <bath>               (FirstFloor)                   
+    //Group    Corridor           "Korytarz"           <corridor>           (FirstFloor)
+
+    Group     Outside            "Podwórko i ogród"    <garden>            (Home)              
+
+                             
+
+     ///////////
+    // ITEMS //
+   ///////////
+
+    //Dimmer   Kitchen_Blind      "Rolety"             <blinds>             (Kitchen, gBlind)              ["Blinds"]  
+     Switch   FrontyardMasterSwitch  "Światła - całe podwórko"   <light>       (gLightsoutside) 
+     Switch   PorchLights            "Światło - ganek"    <light>              (Outside,gLightsOutside)         ["Lights", "Switchable"]  
+     Switch   GateLights             "Światło - brama"    <light>              (Outside,gLightsOutside)         ["Lights", "Switchable"] 
+     Switch   GarageLights           "Światło - garaż"    <light>              (Outside,gLightsOutside)         ["Lights", "Switchable"]
+
+    Switch   YeelightDeskLamp1Sw    "ON/OFF"             <light>              (YeelightDeskLamp1)            ["Lights", "Switchable"]  
+    Switch   YeelightDeskLamp2Sw    "ON/OFF"             <light>              (YeelightDeskLamp2)            ["Lights", "Switchable"] 
+
+    Dimmer   LivingRoom_Blind       "Rolety [%d]"        <rollershutter>             (LivingRoom, gBlind)           ["Blinds"]
+    Dimmer   YeelightDeskLamp1Dim   "Jasność"                                 (YeelightDeskLamp1) 
+    Dimmer   YeelightDeskLamp2Dim   "Jasność"                                 (YeelightDeskLamp2)  
+
+    Group:Dimmer   gBlind           "Rolety"             <blinds>             (Home)                         ["Blinds", "Switchable"]
+    Group:Switch   gLightsoutside   "Światła"            <light>              (Home)                         ["Lights", "Switchable"]
+    
+
+
+
+
+
