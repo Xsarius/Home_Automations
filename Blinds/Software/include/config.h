@@ -8,20 +8,20 @@
 
 // WiFi //
 // Make sure to update this for your own WiFi network!
-#define ssid "SynologySmartConnect"
-#define wifi_password "bsdM7XmzWd4uP4f"
+#define ssid "ssid"
+#define wifi_password "psswd"
 #define WIFI_CONNECT_TIMEOUT_S 5
 
 // MQTT //
 // Make sure to update this for your own MQTT Broker!
-#define mqtt_server "192.168.1.4"
+#define mqtt_server "mqttip"
 #define mqtt_port 1883
-#define mqtt_username "openhabian"
-#define mqtt_password "openhabian"
-#define percentage_topic "esp8266/livingroom/blinds/state"
+#define mqtt_username "mqttuser"
+#define mqtt_password "mqttpsswd"
+#define percentage_topic "topic"
 
 // The client id identifies the ESP8266 device. Think of it a bit like a name, like Greg.
-#define clientID "ESP8266_1"
+#define clientID "name"
 
 /* Write down used names in your network (server doesn't differ them automatically) :
 ESP8266_1
