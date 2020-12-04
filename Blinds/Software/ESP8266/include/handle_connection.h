@@ -6,7 +6,7 @@
 
 void setup_wifi();
 
-bool Connect(); 
+bool ConnectToMQTT();
 
-extern WiFiClient wifiClient; 
+extern WiFiClient wifiClient;
 extern PubSubClient client; // MQTT client

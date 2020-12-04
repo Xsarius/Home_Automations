@@ -4,7 +4,7 @@ WiFiClient wifiClient;
 
 PubSubClient client(mqtt_server, mqtt_port, wifiClient);
 
-bool Connect()
+bool ConnectToMQTT()
 {
   // Connect to MQTT Server and subscribe to the topic
   if (client.connect(clientID, mqtt_username, mqtt_password))

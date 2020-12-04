@@ -1,10 +1,13 @@
+#include "EasyOTA.h"
 #include "handle_connection.h"
 #include "handle_input.h"
 #include "data_saver.h"
 
 int current_steps;
-int current_target_steps;
 int target_steps;
+int current_target_steps;
+
+EasyOTA OTA(clientID);
 
 void setup()
 {
@@ -14,23 +17,31 @@ void setup()
   Serial.println("Device:" clientID);
   Serial.println("Connecting to " ssid);
   SPIFFS.begin();
+
+  OTA.onMessage([](const String &message, int line) {
+    Serial.println(message);
+  });
+
+  OTA.addAP(ssid, wifi_password);
+
   // setCallback sets the function to be called when a message is received.
   client.setCallback(getTarget);
 
-  setup_wifi();
-
   // Connect to MQTT Broker //
-  if (Connect())
+  if (ConnectToMQTT())
   {
     motorPinSetup();
     lowerMotorPins();
   }
 
+  // Read last available blinds position
   current_steps = ReadBackup();
+  // Making sure it makes sense
   if (current_steps < 0)
   {
     current_steps = 0;
   }
+
   Serial.println(current_steps);
 
   target_steps = 0;
@@ -38,10 +49,11 @@ void setup()
 
 void loop()
 {
+
   // If the connection is lost, try to connect again
   if (!client.connected())
   {
-    Connect();
+    ConnectToMQTT();
     motorPinSetup();
     lowerMotorPins();
   }
